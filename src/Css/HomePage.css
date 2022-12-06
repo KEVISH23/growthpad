@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 /* .dadCont{
   width: 100vw !important ;
   height: 90vh !important;
@@ -16,16 +16,12 @@
   background-repeat: no-repeat;
   text-align: center;
 }
-/* .joinusas {
+.joinusas {
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 3rem;
+  
 }
 
-.buttonClass Button {
-  font-size: x-large;
-  padding: 20px;
-} */
+
 
 @media screen and (max-width: 1000px) {
   .image {
