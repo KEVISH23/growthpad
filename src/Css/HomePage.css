@@ -8,15 +8,16 @@
   margin-left: 0;
 } */
 .image{
-  /* background-image: url("../../public/images/bHome3.jpg"); */
+   background-image: url("../../public/images/bHome3.jpg"); 
   width: 100%;
+  height: 100vh;
   overflow-y: hidden;
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-@media screen and (min-width:750px) {
+@media screen and (max-width:750px) {
   .image {
-     height: 100vh;
-     width: 100%;
+    width: 100vh;
+    height: 50%;
 }
 }
