@@ -1,5 +1,7 @@
 import { Button, Grid, Box, Typography, Stack } from "@mui/material";
 import { fontSize } from "@mui/system";
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import React from "react";
 import "../Css/HomePage.css";
 const BeforeLoginHomePage = () => {
@@ -106,7 +108,7 @@ const BeforeLoginHomePage = () => {
                           variant="contained"
                           size="large"
                         >
-                          Teacher
+                          <LocalLibraryIcon fontSize="medium" sx={{mr:2}} /> Teacher
                         </Button>
                       </Grid>
                       <Grid item lg={6} md={6} xl={6} sm={12} xs={12}>
@@ -126,7 +128,7 @@ const BeforeLoginHomePage = () => {
                           variant="outlined"
                           size="large"
                         >
-                          Student
+                          <SchoolRoundedIcon fontSize="medium" sx={{mr:2}} />Student
                         </Button>
                       </Grid>
                     </Grid>
