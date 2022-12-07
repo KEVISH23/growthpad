@@ -52,26 +52,26 @@ const Signup = () => {
               lg: "45%",
               md: "45%",
               sm: "50%",
-              xs: "100%",
-            },
+              xs: "80%",
+            }
           }}
         >
           <img
             src="../images/Mobile login-amico.png"
             alt=""
-            style={{ width: "100%" }}
+            style={{ width: "100%",justifyContent:"center",alignItems:"center" }}
           />
         </Box>
-        <Stack alignItems={"center"} style={{ marginTop: "40px" }}>
+        <Stack alignItems={"center"}>
           <h1>
-            <p color={"secondary"} className="joinusas">
+            <p style={{ color: "#588A67" }} className="joinusas">
               Signin Here
             </p>
           </h1>
 
           <Box sx={{ "& > :not(style)": { m: 1 } }}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-              <AccountCircle sx={{ color: "secondary", mr: 1, my: 0.5 }} />
+              <AccountCircle color="secondary" sx={{ mr: 1, my: 0.5 }} />
               <TextField
                 color="secondary"
                 id="input-with-sx"
@@ -80,7 +80,7 @@ const Signup = () => {
               />
             </Box>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-              <EmailIcon sx={{ color: "secondary", mr: 1, my: 0.5 }} />
+              <EmailIcon color="secondary" sx={{ mr: 1, my: 0.5 }} />
               <TextField
                 color="secondary"
                 id="input-with-sx"
@@ -90,9 +90,17 @@ const Signup = () => {
             </Box>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               {values.showPassword ? (
-                <VisibilityOff sx={{ color: "secondary", mr: 1, my: 0.5 }} onClick={handleClickShowPassword} />
+                <VisibilityOff
+                  color="secondary"
+                  sx={{ mr: 1, my: 0.5 }}
+                  onClick={handleClickShowPassword}
+                />
               ) : (
-                <Visibility sx={{ color: "secondary", mr: 1, my: 0.5 }} onClick={handleClickShowPassword} />
+                <Visibility
+                  color="secondary"
+                  sx={{ mr: 1, my: 0.5 }}
+                  onClick={handleClickShowPassword}
+                />
               )}
               <TextField
                 color="secondary"

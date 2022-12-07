@@ -6,8 +6,8 @@ function App() {
   return (
     <>
     {/* <BeforeLoginHomePage/> */}
-      {/* <Login></Login> */}
-      <Signup/>
+      <Login></Login>
+      {/* <Signup/> */}
     </>
   );
 }
