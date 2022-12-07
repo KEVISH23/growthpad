@@ -1,5 +1,5 @@
 import { Box, Stack } from '@mui/system'
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { AccountCircle } from '@mui/icons-material';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -9,6 +9,24 @@ import EmailIcon from '@mui/icons-material/Email';
 const Login = () => {
   document.body.style.backgroundColor = "#E9F2E9"
   // document.body.style.backgroundColor="#DEF2D5"
+  const [loginField, setloginField] = useState({
+    email: "",
+    password: ""
+  })
+  const loginDetials = (e) => {
+
+    setloginField({
+      ...loginField,
+      [e.target.name]: e.target.value
+    })
+  }
+  const removeElem = (e) => {
+    e.preventDefault()
+    setloginField({
+      email: "",
+      password: ""
+    })
+  }
   return (
     <Box>
       <Stack
@@ -36,14 +54,18 @@ const Login = () => {
           <img src="../images/Login-amico.png" alt="" style={{ width: "100%" }} />
         </Box>
         <Stack spacing={4} direction="column" justifyContent="center" alignItems="center">
-          <h1 style={{ color: "#588A67" }}><LoginRoundedIcon sx={{fontSize:"24px"}}/> LogIn Here</h1>
+          <h1 style={{ color: "#588A67" }}><LoginRoundedIcon sx={{ fontSize: "24px" }} /> LogIn Here</h1>
           <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
             <EmailIcon sx={{ color: '#588A67', mr: 1, my: 0.5 }} />
-            <TextField fullWidth id="input-with-sx" label="Email Id" color="secondary" variant="standard" />
+            <TextField onChange={loginDetials} value={loginField.email} name="email" fullWidth id="input-with-sx" label="Email Id" color="secondary" variant="standard" />
           </Box>
           <Box sx={{ marginTop: "10px", display: 'flex', alignItems: 'flex-end' }}>
             <VisibilityOffIcon sx={{ color: '#588A67', mr: 1, my: 0.5 }} />
-            <TextField fullWidth id="input-with-sx" label="Password" type="password" color="secondary" variant="standard" />
+            <TextField style={{
+              "&:hover": {
+                border: "#487054 !important",
+              }
+            }} onChange={loginDetials} value={loginField.password} name="password" fullWidth id="input-with-sx" label="Password" type="password" color="secondary" variant="standard" />
           </Box>
           <Stack direction={{
             lg: "row",
@@ -52,9 +74,9 @@ const Login = () => {
             sm: "row"
           }} spacing={2}>
 
-            <Button  variant="contained" color="secondary"> LogIn </Button>
-            <Button variant="contained" color="secondary"> Clear </Button>
-            
+            <Button variant="contained" color="secondary"> LogIn </Button>
+            <Button onClick={removeElem} variant="contained" color="secondary"> Clear </Button>
+
           </Stack>
         </Stack>
       </Stack>
