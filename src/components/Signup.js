@@ -89,13 +89,11 @@ const Signup = () => {
               />
             </Box>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-              <Visibility
-                sx={{ color: "secondary", mr: 1, my: 0.5 }}
-                onClick={handleClickShowPassword}
-              >
-                {values.showPassword ? <VisibilityOff /> : <Visibility />}
-              </Visibility>
-
+              {values.showPassword ? (
+                <VisibilityOff sx={{ color: "secondary", mr: 1, my: 0.5 }} onClick={handleClickShowPassword} />
+              ) : (
+                <Visibility sx={{ color: "secondary", mr: 1, my: 0.5 }} onClick={handleClickShowPassword} />
+              )}
               <TextField
                 color="secondary"
                 id="input-with-sx"
