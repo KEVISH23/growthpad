@@ -1,9 +1,11 @@
 import BeforeLoginHomePage from "./components/BeforeLoginHomePage";
+import Login from "./components/Login";
 
 function App() {
   return (
     <>
-    <BeforeLoginHomePage/>
+    {/* <BeforeLoginHomePage/> */}
+    <Login></Login>
     </>
   );
 }
