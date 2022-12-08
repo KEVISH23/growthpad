@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import EmailIcon from '@mui/icons-material/Email';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import '../Css/HomePage.css'
 
 
 const Login = () => {
@@ -115,6 +116,8 @@ const Login = () => {
             <Button onClick={removeElem} variant="contained" color="secondary"> Clear </Button>
 
           </Stack>
+          <h6 className='joinusas' style={{marginTop:"20px"}}>Not Registered Yet? <a style={{color:"#588A67"}} href="#">Register Here</a></h6>
+          
         </Stack>
       </Stack>
     </Box>
