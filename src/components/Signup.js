@@ -1,10 +1,5 @@
 import * as React from "react";
-import { Box, Stack, Grid , TextField,Typography } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
+import { Box, Stack , TextField } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -13,10 +8,6 @@ import '../Css/HomePage.css'
 
 const Signup = () => {
    const [values, setValues] = React.useState({
-     amount: "",
-     password: "",
-     weight: "",
-     weightRange: "",
      showPassword: false,
    });
 
@@ -31,9 +22,6 @@ const Signup = () => {
      });
    };
 
-   const handleMouseDownPassword = (event) => {
-     event.preventDefault();
-   };
   return (
     <Box>
       <Stack
