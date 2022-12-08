@@ -7,7 +7,7 @@ function App() {
     <>
     {/* <HomeForAll/>
     <BeforeLoginHomePage/> */}
-      <Login/>
+      {/* <Login/> */}
       <Signup/>
     </>
   );
