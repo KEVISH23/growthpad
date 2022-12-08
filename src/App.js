@@ -1,14 +1,14 @@
-// import BeforeLoginHomePage from "./components/BeforeLoginHomePage";
+import BeforeLoginHomePage from "./components/BeforeLoginHomePage";
 import Login from "./components/Login";
-// import HomeForAll from "./components/HomeForAll";
+import HomeForAll from "./components/HomeForAll";
 import Signup from "./components/Signup";
 function App() {
   return (
     <>
-    {/* <HomeForAll/>
-    <BeforeLoginHomePage/> */}
+    {/* <HomeForAll/> */}
+    <BeforeLoginHomePage/>
       {/* <Login/> */}
-      <Signup/> 
+      {/* <Signup/>  */}
     </>
   );
 }

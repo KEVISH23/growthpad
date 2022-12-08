@@ -27,9 +27,7 @@
     background-size: 100%;
   }
 }
-body, html{
-  height: 100%;
-}
+
 .homeBack{
   background-image: url('../../public/images/bHome3.jpg');
   /* width: 100%; */

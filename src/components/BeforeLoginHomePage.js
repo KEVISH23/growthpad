@@ -5,7 +5,7 @@ import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import React from "react";
 import "../Css/HomePage.css";
 const BeforeLoginHomePage = () => {
-  
+    document.body.style.backgroundColor="#E9F2E9"
   return (
     <>
       <div className="image">
