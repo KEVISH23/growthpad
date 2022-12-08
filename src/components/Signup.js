@@ -88,7 +88,7 @@ const Signup = () => {
         sx={{
           mt: {
             lg: "50px",
-            sm:"50px"
+            sm: "50px",
           },
         }}
       >
@@ -247,7 +247,20 @@ const Signup = () => {
               >
                 {" "}
                 Clear{" "}
-              </Button>
+              </Button>{" "}
+            </Stack>
+            <Stack
+              direction={"row"}
+              justifyContent="center"
+              alignItems={"center"}
+              style={{ marginBottom: "2rem" }}
+            >
+              <h6 className="joinusas" >
+                Already Registered?{" "}
+                <a href="#" style={{ color: "#588A67"}}>
+                  Login Here
+                </a>
+              </h6>
             </Stack>
           </Box>
         </Stack>
