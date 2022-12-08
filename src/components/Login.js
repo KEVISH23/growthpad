@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
-import { Box, Stack } from '@mui/system'
-import TextField from '@mui/material/TextField';
-// import { AccountCircle } from '@mui/icons-material';
-// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { AppBar, Button, Toolbar, Typography } from '@mui/material';
-import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
-import EmailIcon from '@mui/icons-material/Email';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import '../Css/HomePage.css'
-import Signup from './Signup'
+import React, { useState } from "react";
+import { Box, Stack } from "@mui/system";
+import TextField from "@mui/material/TextField";
+import AppBars from "./AppBars";
+import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import EmailIcon from "@mui/icons-material/Email";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import "../Css/HomePage.css";
+import Signup from "./Signup";
 
 const Login = (props) => {
-  const [formChange, setformChange] = useState("false")
+  const [formChange, setformChange] = useState("false");
   const changeFormState = () => {
-    setformChange("true")
-  }
+    setformChange("true");
+  };
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -22,27 +21,29 @@ const Login = (props) => {
     weightRange: "",
     showPassword: false,
   });
-const [details, setdetails] = useState(props.details)
-console.log(props.details);
-const checkUser =(e)=>{
-  e.preventDefault()
-  if(details.length == 0){
-    alert("No User Found Please Register")
-  }
-  else{
-    let result = details.find((details)=>{
-      return (details.email === loginField.email && details.password === loginField.password)
-    })
-    if(result){
-       alert("User Exist")    
-    }else{
-      alert("Email or Passwprd incorrect!!")
+  const [details, setdetails] = useState(props.details);
+  console.log(props.details);
+  const checkUser = (e) => {
+    e.preventDefault();
+    if (details.length == 0) {
+      alert("No User Found Please Register");
+    } else {
+      let result = details.find((details) => {
+        return (
+          details.email === loginField.email &&
+          details.password === loginField.password
+        );
+      });
+      if (result) {
+        alert("Loggedin Successfully");
+      } else {
+        alert("Email or Passwprd incorrect!!");
+      }
+      // console.log(userDetails)
+      // console.log(result)
+      // removeElem()
     }
-    // console.log(userDetails)
-    // console.log(result)
-    // removeElem()
-  }
-}
+  };
 
   const handleClickShowPassword = () => {
     setValues({
@@ -50,46 +51,29 @@ const checkUser =(e)=>{
       showPassword: !values.showPassword,
     });
   };
-  document.body.style.backgroundColor = "#E9F2E9"
+  document.body.style.backgroundColor = "#E9F2E9";
   // document.body.style.backgroundColor="#DEF2D5"
   const [loginField, setloginField] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
   const loginDetials = (e) => {
-
     setloginField({
       ...loginField,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
   const removeElem = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setloginField({
       email: "",
-      password: ""
-    })
-  }
+      password: "",
+    });
+  };
 
-  return (
-   
-      formChange == "false" ? (
-        <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ backgroundColor: "#588A67" }}>
-          <Toolbar>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, color: "white" }}
-            >
-              {props.title}
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
-
+  return formChange == "false" ? (
+    <>
+      <AppBars />
       <Box>
         <Stack
           direction={{
@@ -128,8 +112,7 @@ const checkUser =(e)=>{
           >
             <h1>
               <p style={{ color: "#588A67" }} className="joinusas">
-                <LoginRoundedIcon sx={{ mb: 1 }} fontSize='large' /> LogIn Here
-
+                <LoginRoundedIcon sx={{ mb: 1 }} fontSize="large" /> LogIn Here
               </p>
             </h1>
 
@@ -183,25 +166,33 @@ const checkUser =(e)=>{
               spacing={2}
             >
               <Button onClick={checkUser} variant="contained" color="secondary">
-                
                 LogIn
               </Button>
-              <Button onClick={removeElem} variant="contained" color="secondary">
-
+              <Button
+                onClick={removeElem}
+                variant="contained"
+                color="secondary"
+              >
                 Clear
               </Button>
             </Stack>
-            <h6 className='joinusas' style={{ marginTop: "20px" }}>Not Registered Yet? <Button color="secondary" variant="text" onClick={changeFormState}>Register Here</Button></h6>
-
+            <h6 className="joinusas" style={{ marginTop: "20px" }}>
+              Not Registered Yet?{" "}
+              <Button
+                color="secondary"
+                variant="text"
+                onClick={changeFormState}
+              >
+                Register Here
+              </Button>
+            </h6>
           </Stack>
         </Stack>
       </Box>
-      </>)
-        : (<Signup title="GrowthPad" />)
-    
-
-
+    </>
+  ) : (
+    <Signup title="GrowthPad" />
   );
-}
+};
 
-export default Login
+export default Login;
