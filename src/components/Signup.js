@@ -116,7 +116,7 @@ const Signup = () => {
         <Stack alignItems={"center"}>
           <h1>
             <p style={{ color: "#588A67" }} className="joinusas">
-              <HowToRegIcon fontSize="large" sx={{mb:1}} /> Signin Here
+              <HowToRegIcon fontSize="large" sx={{ mb: 1 }} /> Signin Here
             </p>
           </h1>
 
@@ -128,6 +128,8 @@ const Signup = () => {
                 id="input-with-sx"
                 label="Username"
                 variant="standard"
+                fullWidth
+
                 name="name"
                 value={fields.name}
                 onChange={fieldValue}
@@ -141,6 +143,8 @@ const Signup = () => {
                 id="input-with-sx"
                 label="Email"
                 variant="standard"
+                fullWidth
+
                 onChange={fieldValue}
                 name="email"
                 value={fields.email}
@@ -165,6 +169,8 @@ const Signup = () => {
                 id="input-with-sx"
                 label="Password"
                 variant="standard"
+                fullWidth
+
                 onChange={fieldValue}
                 type={values.showPassword ? "text" : "password"}
                 name="password"
@@ -183,19 +189,24 @@ const Signup = () => {
                 maxRows={3}
                 color="secondary"
                 variant="standard"
+                fullWidth
+
                 onChange={fieldValue}
                 value={fields.homeAddress}
-                fullWidth
+                
               />
             </Box>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <PhoneIcon color="secondary" sx={{ mr: 1, my: 0.5 }} />
               <TextField
+                
                 name="mobile"
                 id="outlined-multiline-flexible"
                 label="Mobile Number"
                 color="secondary"
                 variant="standard"
+                fullWidth
+
                 onChange={fieldValue}
                 value={fields.mobile}
               />
@@ -203,11 +214,14 @@ const Signup = () => {
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <MenuBookIcon color="secondary" sx={{ mr: 1, my: 0.5 }} />
               <TextField
+                
                 name="tutionName"
                 color="secondary"
                 id="input-with-sx"
                 label="Tution Class Name"
                 variant="standard"
+                fullWidth
+
                 onChange={fieldValue}
                 value={fields.tutionName}
               />
@@ -222,8 +236,10 @@ const Signup = () => {
                 maxRows={3}
                 color="secondary"
                 variant="standard"
-                onChange={fieldValue}
                 fullWidth
+
+                onChange={fieldValue}
+                
                 value={fields.tutionAddress}
               />
             </Box>
