@@ -85,7 +85,7 @@ const Login = () => {
         >
           <h1>
             <p style={{ color: "#588A67" }} className="joinusas">
-              <LoginRoundedIcon sx={{ fontSize: "24px" }} /> LogIn Here
+              <LoginRoundedIcon sx={{mb:1}} fontSize='large' /> LogIn Here
 
             </p>
           </h1>
