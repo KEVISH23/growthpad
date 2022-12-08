@@ -53,75 +53,106 @@ const Login = () => {
           lg: "row",
           md: "row",
           sm: "row",
-          xs: "column"
-        }
-        }
+          xs: "column",
+        }}
         justifyContent="space-around"
         alignItems="center"
         spacing={2}
       >
-        <Box sx={{
-          // backgroundColor:"blue",
-          justifyContent: "center",
-          width: {
-            lg: "45%",
-            md: "45%",
-            sm: "45%",
-            xs: "100%",
-          }
-        }}>
-          <img src="../images/Login-amico.png" alt="" style={{ width: "100%" }} />
+        <Box
+          sx={{
+            // backgroundColor:"blue",
+            // justifyContent: "center",
+            width: {
+              lg: "45%",
+              md: "45%",
+              sm: "45%",
+              xs: "100%",
+            },
+          }}
+        >
+          <img
+            src="../images/Login-amico.png"
+            alt=""
+            style={{ width: "100%" }}
+          />
         </Box>
-        <Stack spacing={4} direction="column" justifyContent="center" alignItems="center">
-          <h1 style={{ color: "#588A67" }}><LoginRoundedIcon sx={{ fontSize: "24px" }} /> LogIn Here</h1>
-          <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-            <EmailIcon sx={{ color: '#588A67', mr: 1, my: 0.5 }} />
-            <TextField onChange={loginDetials} value={loginField.email} name="email" fullWidth id="input-with-sx" label="Email Id" color="secondary" variant="standard" />
+        <Stack
+          spacing={4}
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <h1>
+            <p style={{ color: "#588A67" }} className="joinusas">
+              <LoginRoundedIcon sx={{ fontSize: "24px" }} /> LogIn Here
+
+            </p>
+          </h1>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+            <EmailIcon sx={{ color: "#588A67", mr: 1, my: 0.5 }} />
+            <TextField
+              onChange={loginDetials}
+              value={loginField.email}
+              name="email"
+              fullWidth
+              id="input-with-sx"
+              label="Email Id"
+              color="secondary"
+              variant="standard"
+            />
           </Box>
           <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-              {values.showPassword ? (
-                <VisibilityOff
-                  color="secondary"
-                  sx={{ mr: 1, my: 0.5 }}
-                  onClick={handleClickShowPassword}
-                />
-              ) : (
-                <Visibility
-                  color="secondary"
-                  sx={{ mr: 1, my: 0.5 }}
-                  onClick={handleClickShowPassword}
-                />
-              )}
-              <TextField
+            {values.showPassword ? (
+              <VisibilityOff
                 color="secondary"
-                id="input-with-sx"
-                label="Password"
-                variant="standard"
-                type={values.showPassword ? "text" : "password"}
-                name="password"
-                value={loginField.password}
-                onChange={loginDetials}
-              >
-                Password
-              </TextField>
-            </Box>
-          <Stack direction={{
-            lg: "row",
-            md: "row",
-            xs: "row",
-            sm: "row"
-          }} spacing={2}>
-
-            <Button variant="contained" color="secondary"> LogIn </Button>
-            <Button onClick={removeElem} variant="contained" color="secondary"> Clear </Button>
-
+                sx={{ mr: 1, my: 0.5 }}
+                onClick={handleClickShowPassword}
+              />
+            ) : (
+              <Visibility
+                color="secondary"
+                sx={{ mr: 1, my: 0.5 }}
+                onClick={handleClickShowPassword}
+              />
+            )}
+            <TextField
+              color="secondary"
+              id="input-with-sx"
+              label="Password"
+              variant="standard"
+              type={values.showPassword ? "text" : "password"}
+              name="password"
+              value={loginField.password}
+              onChange={loginDetials}
+            >
+              Password
+            </TextField>
+          </Box>
+          <Stack
+            direction={{
+              lg: "row",
+              md: "row",
+              xs: "row",
+              sm: "row",
+            }}
+            spacing={2}
+          >
+            <Button variant="contained" color="secondary">
+              {" "}
+              LogIn{" "}
+            </Button>
+            <Button onClick={removeElem} variant="contained" color="secondary">
+              {" "}
+              Clear{" "}
+            </Button>
           </Stack>
           <h6 className='joinusas' style={{marginTop:"20px"}}>Not Registered Yet? <a style={{color:"#588A67"}} href="#">Register Here</a></h6>
           
         </Stack>
       </Stack>
     </Box>
-  )
+  );
 }
 
 export default Login
