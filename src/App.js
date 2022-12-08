@@ -8,11 +8,11 @@ function App() {
   return (
     <>
     {/* <HomeForAll/> */}
-    {/* <BeforeLoginHomePage/> */}
-      {/* <Login/> */}
+    <BeforeLoginHomePage/>
+      {/* <Login title="GrowthPad" details={[]}/> */}
       {/* <Signup/>  */}
       {/* <Home/> */}
-      <Home title="GrowthPad"/>
+      {/* <Home title="GrowthPad"/> */}
     </>
   );
 }

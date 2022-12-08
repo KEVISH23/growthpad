@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { Box, Stack, TextField , Button} from "@mui/material";
+import { Box, Stack, TextField , Button, AppBar, Typography, Toolbar} from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -9,7 +9,8 @@ import HowToRegIcon from "@mui/icons-material/HowToReg";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
-const Signup = () => {
+import Login from "./Login";
+const Signup = (props) => {
 
   const [fields, setfields] = useState({
     name: "",
@@ -21,6 +22,10 @@ const Signup = () => {
     tutionAddress:""
   })
   const [userDetails, setuserDetails] = useState([])
+  const [formChange, setformChange] = useState("false")
+  const changeFormState = () => {
+    setformChange("true")
+  }
   // const userDetails =[]
   const enterUserDetails =(e)=>{
     e.preventDefault();
@@ -98,6 +103,23 @@ const Signup = () => {
   document.body.style.backgroundColor = "#E9F2E9";
 
   return (
+    formChange == "false" ?(
+      <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static" sx={{ backgroundColor: "#588A67" }}>
+          <Toolbar>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, color: "white" }}
+            >
+              {props.title}
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    
     <Box>
       <Stack
         direction={{
@@ -291,15 +313,16 @@ const Signup = () => {
             >
               <h6 className="joinusas">
                 Already Registered?{" "}
-                <a href="#" style={{ color: "#588A67" }}>
+                <Button color="secondary" variant="text" onClick={changeFormState}>
                   Login Here
-                </a>
+                </Button>
               </h6>
             </Stack>
           </Box>
         </Stack>
       </Stack>
     </Box>
+    </>):(<Login title="GrowthPad" details={userDetails}/>)
   );
 };
 

@@ -49,7 +49,7 @@ export default function Home(props) {
           <Stack justifyContent="center" alignItems="center" direction="column">
           <img src="../images/student-with-graduation-cap.png" style={{height:"100px"}}/>
                 <p>Students can interact with teachers</p>
-                <Button color="secondary" disbled variant="contained">Interact with Teacher</Button>
+                <Button color="secondary" disabled variant="contained">Interact with Teacher</Button>
             </Stack>
           </Grid>
         </Grid>
