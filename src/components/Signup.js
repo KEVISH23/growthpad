@@ -33,6 +33,10 @@ const Signup = () => {
         }}
         justifyContent="space-around"
         spacing={2}
+        sx={{
+          mt: {
+          lg:"50px"
+        }}}
       >
         <Box
           sx={{
@@ -40,7 +44,7 @@ const Signup = () => {
               lg: "45%",
               md: "45%",
               sm: "50%",
-              xs: "80%",
+              xs: "100%",
             }
           }}
         >

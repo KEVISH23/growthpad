@@ -61,7 +61,7 @@ const Login = () => {
       >
         <Box sx={{
           // backgroundColor:"blue",
-          justifyContent: "center",
+          // justifyContent: "center",
           width: {
             lg: "45%",
             md: "45%",
