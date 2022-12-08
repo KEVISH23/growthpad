@@ -5,6 +5,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
 import "../Css/HomePage.css";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
@@ -115,7 +116,7 @@ const Signup = () => {
         <Stack alignItems={"center"}>
           <h1>
             <p style={{ color: "#588A67" }} className="joinusas">
-              Signin Here
+              <HowToRegIcon fontSize="large" sx={{mb:1}} /> Signin Here
             </p>
           </h1>
 
@@ -255,9 +256,9 @@ const Signup = () => {
               alignItems={"center"}
               style={{ marginBottom: "2rem" }}
             >
-              <h6 className="joinusas" >
+              <h6 className="joinusas">
                 Already Registered?{" "}
-                <a href="#" style={{ color: "#588A67"}}>
+                <a href="#" style={{ color: "#588A67" }}>
                   Login Here
                 </a>
               </h6>
