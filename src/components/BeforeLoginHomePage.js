@@ -5,6 +5,7 @@ import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import React from "react";
 import "../Css/HomePage.css";
 const BeforeLoginHomePage = () => {
+  
   return (
     <>
       <div className="image">

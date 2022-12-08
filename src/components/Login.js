@@ -1,12 +1,32 @@
-import { Box, Stack } from '@mui/system'
 import React, { useState } from 'react'
+import { Box, Stack } from '@mui/system'
 import TextField from '@mui/material/TextField';
-import { AccountCircle } from '@mui/icons-material';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+// import { AccountCircle } from '@mui/icons-material';
+// import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import EmailIcon from '@mui/icons-material/Email';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+
+
 const Login = () => {
+  const [values, setValues] = React.useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false,
+  });
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
   document.body.style.backgroundColor = "#E9F2E9"
   // document.body.style.backgroundColor="#DEF2D5"
   const [loginField, setloginField] = useState({
@@ -59,14 +79,33 @@ const Login = () => {
             <EmailIcon sx={{ color: '#588A67', mr: 1, my: 0.5 }} />
             <TextField onChange={loginDetials} value={loginField.email} name="email" fullWidth id="input-with-sx" label="Email Id" color="secondary" variant="standard" />
           </Box>
-          <Box sx={{ marginTop: "10px", display: 'flex', alignItems: 'flex-end' }}>
-            <VisibilityOffIcon sx={{ color: '#588A67', mr: 1, my: 0.5 }} />
-            <TextField style={{
-              "&:hover": {
-                border: "#487054 !important",
-              }
-            }} onChange={loginDetials} value={loginField.password} name="password" fullWidth id="input-with-sx" label="Password" type="password" color="secondary" variant="standard" />
-          </Box>
+          <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              {values.showPassword ? (
+                <VisibilityOff
+                  color="secondary"
+                  sx={{ mr: 1, my: 0.5 }}
+                  onClick={handleClickShowPassword}
+                />
+              ) : (
+                <Visibility
+                  color="secondary"
+                  sx={{ mr: 1, my: 0.5 }}
+                  onClick={handleClickShowPassword}
+                />
+              )}
+              <TextField
+                color="secondary"
+                id="input-with-sx"
+                label="Password"
+                variant="standard"
+                type={values.showPassword ? "text" : "password"}
+                name="password"
+                value={loginField.password}
+                onChange={loginDetials}
+              >
+                Password
+              </TextField>
+            </Box>
           <Stack direction={{
             lg: "row",
             md: "row",
