@@ -20,9 +20,31 @@ const Signup = () => {
     tutionName: "",
     tutionAddress:""
   })
-  
-   const removeElem = (e) => {
-     e.preventDefault();
+  const [userDetails, setuserDetails] = useState([])
+  // const userDetails =[]
+  const enterUserDetails =(e)=>{
+    e.preventDefault();
+    
+    if(userDetails.length==0){
+      userDetails.push(fields)
+    }
+    else{
+      let result = userDetails.find((userDetails)=>{
+        return userDetails.email === fields.email
+      })
+      if(result){
+         alert("User Exist")    
+      }else{
+        userDetails.push(fields)
+      }
+      console.log(userDetails)
+      console.log(result)
+      // removeElem()
+    }
+    console.log(userDetails)
+  }
+   const removeElem = () => {
+    //  e.preventDefault();
      setfields({
        name: "",
        email: "",
@@ -86,12 +108,7 @@ const Signup = () => {
         }}
         justifyContent="space-around"
         spacing={2}
-        sx={{
-          mt: {
-            lg: "50px",
-            sm: "50px",
-          },
-        }}
+       
       >
         <Box
           sx={{
@@ -254,7 +271,7 @@ const Signup = () => {
               alignItems={"center"}
               spacing={2}
             >
-              <Button variant="contained" color="secondary">
+              <Button variant="contained" onClick={enterUserDetails} color="secondary">
                 SignIn
               </Button>
               <Button
@@ -262,9 +279,9 @@ const Signup = () => {
                 color="secondary"
                 onClick={removeElem}
               >
-                {" "}
-                Clear{" "}
-              </Button>{" "}
+                
+                Clear
+              </Button>
             </Stack>
             <Stack
               direction={"row"}
