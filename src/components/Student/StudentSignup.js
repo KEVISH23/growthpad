@@ -27,7 +27,7 @@ const Signup = (props) => {
     homeAddress: "",
     mobile: "",
     tutionName: "",
-    standard: "",
+    standard: 1,
   });
   const [userDetails, setuserDetails] = useState([]);
   const [formChange, setformChange] = useState("false");
@@ -44,9 +44,20 @@ const Signup = (props) => {
       }
       else{
         
+        if((fields.mobile.length>10 || fields.mobile.length<10) || (fields.standard < "0" || fields.standard > "12")){
+          if(fields.mobile.length>10 || fields.mobile.length<10){
+            alert("Mobile number must contain 10 digit")
+          }
+          else if((fields.standard > 0 || fields.standard<=12)){
+            alert("Standard Must be in the range of 1 to 12")
+          }
+         
+        }
+        else{
           alert("Account Created");
           userDetails.push(fields);
           removeElem()
+        }
         
       }
     } else {
@@ -61,9 +72,20 @@ const Signup = (props) => {
         if (result) {
           alert("User Exist");
         } else {
-          alert("Account Created");
-          userDetails.push(fields);
-          removeElem()
+          if((fields.mobile.length>10 || fields.mobile.length<10) || (fields.standard < 0 || fields.standard > 12)){
+            if(fields.mobile.length>10 || fields.mobile.length<10){
+              alert("Mobile number must contain 10 digit")
+            }
+            else if((fields.standard > 0 || fields.standard<=12)){
+              alert("Standard Must be in the range of 1 to 12")
+            }
+           
+          }
+          else{
+            alert("Account Created");
+            userDetails.push(fields);
+            removeElem()
+          }
         }
         console.log(userDetails);
         console.log(result);
@@ -92,29 +114,15 @@ const Signup = (props) => {
           // alert(e.target.value);
         }
       } else {
-        if(e.target.name === "standard"){
-            if(fields.standard >0 && fields.standard <=12){
-                setfields({
-                    ...fields,
-                    [e.target.name]: e.target.value,
-                  });
-            }
-        }
-        else{
-            if (fields.mobile.length <= 9) {
+
               setfields({
                 ...fields,
                 [e.target.name]: e.target.value,
               });
-            } else {
-              // alert("sabun slow")
-            }
-        }
+            
+        
       }
     } else {
-     
-     
-
         setfields({
           ...fields,
           [e.target.name]: e.target.value,
@@ -283,14 +291,13 @@ const Signup = (props) => {
                 <TextField
                   name="standard"
                   id="outlined-multiline-flexible"
-                  label="Tution Address"
-                  multiline
-                  maxRows={3}
+                  label="Standard"
+                  type="number"
                   color="secondary"
                   variant="standard"
                   fullWidth
                   onChange={fieldValue}
-                  value={fields.Standard}
+                  value={fields.standard}
                 />
               </Box>
               <Stack
