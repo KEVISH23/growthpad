@@ -8,7 +8,7 @@ import {
   Typography,
   Toolbar,
 } from "@mui/material";
-import SchoolIcon from "@mui/icons-material/School";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -289,7 +289,7 @@ const Signup = (props) => {
                 />
               </Box>
               <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <SchoolIcon color="secondary" sx={{ mr: 1, my: 0.5 }} />
+                <AutoStoriesIcon color="secondary" sx={{ mr: 1, my: 0.5 }} />
                 <TextField
                   name="standard"
                   id="outlined-multiline-flexible"
