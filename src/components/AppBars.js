@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AppBar, Button, Toolbar, Typography , Box} from "@mui/material";
-const AppBars = () => {
+const AppBars = ({ authCheck }) => {
+  const [pathState, setpathState] = useState(authCheck);
+  const changePath = () => {
+    if (pathState === "false") {
+      setpathState("true")
+    } else {
+      setpathState("false")
+    }
+  }
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -13,17 +21,16 @@ const AppBars = () => {
               component="div"
               sx={{ flexGrow: 1, color: "white" }}
             >
-              <Link
-              style={{ textDecoration: "none", color:"white" }}
-              to={"/"}
-            >GrwothPad</Link>
+              <Link style={{ textDecoration: "none", color: "white" }} to={"/"}>
+                GrwothPad
+              </Link>
             </Typography>
             <Link
               style={{ textDecoration: "none" }}
-              to={"/login"}
+              to={pathState === "false" ? "/signup" : "/login"}
             >
-              <Button style={{ color: "white" }}>
-                Login
+              <Button onClick={changePath} style={{ color: "white" }}>
+                {pathState === "false" ? "Signup" : "Login"}
               </Button>
             </Link>
           </Toolbar>

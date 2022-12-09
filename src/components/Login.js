@@ -73,7 +73,7 @@ const Login = (props) => {
 
   return formChange == "false" ? (
     <>
-      <AppBars />
+      <AppBars authCheck={formChange} />
       <Box>
         <Stack
           direction={{
