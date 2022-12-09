@@ -105,11 +105,11 @@ const BeforeLoginHomePage = () => {
         <Grid item lg={4} md={4} sm={6} xs={12}>
           <div className="features-row">
             <img
-              src="../images/class.png"
+              src="../images/rupi.png"
               alt="classRoom"
               className="underOneRoof"
             />
-            <h3 className="joinusas">Everything under one roof</h3> <br />
+            <h3 className="joinusas">Fees Payment</h3> <br />
             {
               <p className="joinusas">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -123,11 +123,11 @@ const BeforeLoginHomePage = () => {
         <Grid item lg={4} md={4} sm={6} xs={12}>
           <div className="features-row">
             <img
-              src="../images/class.png"
+              src="../images/easy.png"
               alt="classRoom"
               className="underOneRoof"
             />
-            <h3 className="joinusas">Everything under one roof</h3> <br />
+            <h3 className="joinusas">Easy to use</h3> <br />
             {
               <p className="joinusas">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
