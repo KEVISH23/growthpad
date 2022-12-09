@@ -5,8 +5,8 @@ import Login from './Login'
 import Signup from './Signup'
 import Home from './Teacher/Home';
 import StudentHome from './Student/StudentHome';
-import StudentSignup from './Student/StudentSignup'
 import Error404 from './Error404';
+import StudentLogin from './Student/StudentLogin';
 const Routing = () => {
   return (
     <BrowserRouter>
@@ -14,7 +14,7 @@ const Routing = () => {
         <Route exact path="/" element={<BeforeLoginHomePage />}></Route>
         <Route exact path="/teacher" element={<Home />}></Route>
         <Route exact path="/student" element={<StudentHome />}></Route>
-        <Route exact path="/studentSignup" element={<StudentSignup />}></Route>
+        <Route exact path="/studentLogin" element={<StudentLogin />}></Route>
         <Route exact path="/login" element={<Login details={[]} />}></Route>
         <Route exact path="/signup" element={<Signup />}></Route>
         <Route exact path="/*" element={<Error404/>} ></Route>

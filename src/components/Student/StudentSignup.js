@@ -150,7 +150,7 @@ const Signup = (props) => {
 
   return formChange == "false" ? (
     <>
-      <AppBars authCheck={formChange} />
+      <AppBars />
 
       <Box>
         <Stack

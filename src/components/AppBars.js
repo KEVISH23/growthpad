@@ -18,7 +18,7 @@ const AppBars = ({ studSign }) => {
               </Link>
             </Typography>
             {studSign ? (
-              <Link style={{ textDecoration: "none" }} to={"/studentSignup"}>
+              <Link style={{ textDecoration: "none" }} to={"/studentLogin"}>
                 <Button style={{ color: "white" }}>Login</Button>
               </Link>
             ) : (
