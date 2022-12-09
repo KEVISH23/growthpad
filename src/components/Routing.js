@@ -14,7 +14,7 @@ const Routing = () => {
         <Route exact path="/" element={<BeforeLoginHomePage />}></Route>
         <Route exact path="/teacher" element={<Home />}></Route>
         <Route exact path="/student" element={<StudentHome />}></Route>
-        <Route exact path="/studentLogin" element={<StudentLogin />}></Route>
+        <Route exact path="/studentLogin" element={<StudentLogin details={[]}/>}></Route>
         <Route exact path="/login" element={<Login details={[]} />}></Route>
         <Route exact path="/signup" element={<Signup />}></Route>
         <Route exact path="/*" element={<Error404/>} ></Route>
