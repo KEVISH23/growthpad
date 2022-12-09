@@ -26,7 +26,14 @@ const Login = (props) => {
   const checkUser = (e) => {
     e.preventDefault();
     if (details.length == 0) {
-      alert("No User Found Please Register");
+      if(loginField.email=="" || loginField.password==""){
+
+        alert("Please enter Email and Password");
+      }else{
+
+        alert("No User Found Please Register");
+        removeElem()
+      }
     } else {
       let result = details.find((details) => {
         return (
@@ -36,8 +43,9 @@ const Login = (props) => {
       });
       if (result) {
         alert("Loggedin Successfully");
+        removeElem()
       } else {
-        alert("Email or Passwprd incorrect!!");
+        alert("Email or Password incorrect!!");
       }
       // console.log(userDetails)
       // console.log(result)

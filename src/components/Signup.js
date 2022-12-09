@@ -39,20 +39,35 @@ const Signup = (props) => {
     e.preventDefault();
 
     if (userDetails.length == 0) {
-      alert("Account Created");
-      userDetails.push(fields);
-    } else {
-      let result = userDetails.find((userDetails) => {
-        return userDetails.email === fields.email;
-      });
-      if (result) {
-        alert("User Exist");
-      } else {
-        alert("Account Created");
-        userDetails.push(fields);
+      if(fields.email=="" || fields.password=="" || fields.name=="" || fields.homeAddress=="" || fields.mobile=="" || fields.tutionAddress=="" || fields.tutionName=="" ){
+        alert("Kindly fill up all the fields")
       }
-      console.log(userDetails);
-      console.log(result);
+      else{
+        
+          alert("Account Created");
+          userDetails.push(fields);
+          removeElem()
+        
+      }
+    } else {
+      if(fields.email=="" || fields.password=="" || fields.name=="" || fields.homeAddress=="" || fields.mobile=="" || fields.tutionAddress=="" || fields.tutionName=="" ){
+        alert("Kindly fill up all the fields")
+      }
+      else{
+
+        let result = userDetails.find((userDetails) => {
+          return userDetails.email === fields.email;
+        });
+        if (result) {
+          alert("User Exist");
+        } else {
+          alert("Account Created");
+          userDetails.push(fields);
+          removeElem()
+        }
+        console.log(userDetails);
+        console.log(result);
+      }
       // removeElem()
     }
     console.log(userDetails);
@@ -87,10 +102,14 @@ const Signup = (props) => {
         }
       }
     } else {
-      setfields({
-        ...fields,
-        [e.target.name]: e.target.value,
-      });
+     
+     
+
+        setfields({
+          ...fields,
+          [e.target.name]: e.target.value,
+        });
+      
     }
   };
 
