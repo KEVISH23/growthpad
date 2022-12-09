@@ -5,20 +5,20 @@
 // import Home from "./components/Teacher/Home";
 
 import Routing from "./components/Routing";
-import Signup from "./components/Student/Signup";
+// import StudentSignup from "./components/Student/StudentSignup";
 
 // import Home from "./components/Student/Home";
 function App() {
   return (
     <>
-    {/* <HomeForAll/> */}
-    {/* <BeforeLoginHomePage/> */}
+      {/* <HomeForAll/> */}
+      {/* <BeforeLoginHomePage/> */}
       {/* <Login  details={[]}/> */}
       {/* <Signup/>  */}
       {/* <Home/> */}
       {/* <Home  */}
-      {/* <Routing/> */}
-      <Signup/>
+      <Routing/>
+      {/* <StudentSignup/> */}
     </>
   );
 }

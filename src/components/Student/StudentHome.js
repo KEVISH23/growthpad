@@ -7,12 +7,13 @@ import Button from "@mui/material/Button";
 import { Container, Grid, Stack } from "@mui/material";
 import NotesIcon from "@mui/icons-material/Notes";
 import AppBars from "../AppBars";
+import StudentSignup from "./StudentSignup"
 
 export default function StudentHome(props) {
   document.body.style.backgroundColor = "#E9F2E9";
   return (
     <>
-      <AppBars />
+      <AppBars studSign="hii" />
       <Container>
         <Grid justifyContent="center" mt={10} container spacing={3}>
           <Grid item lg={4} md={4} sm={8} xs={12}>
