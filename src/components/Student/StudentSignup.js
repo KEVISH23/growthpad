@@ -50,7 +50,7 @@ const Signup = (props) => {
           if(fields.mobile.length>10 || fields.mobile.length<10){
             alert("Mobile number must contain 10 digit")
           }
-          else if((fields.standard > 0 || fields.standard<=12)){
+          else if((fields.standard < 0 || fields.standard >12)){
             alert("Standard Must be in the range of 1 to 12")
           }
          
