@@ -5,6 +5,7 @@
 // import Home from "./components/Teacher/Home";
 
 import Routing from "./components/Routing";
+import Signup from "./components/Student/Signup";
 
 // import Home from "./components/Student/Home";
 function App() {
@@ -16,7 +17,8 @@ function App() {
       {/* <Signup/>  */}
       {/* <Home/> */}
       {/* <Home  */}
-      <Routing/>
+      {/* <Routing/> */}
+      <Signup/>
     </>
   );
 }
