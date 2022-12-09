@@ -69,8 +69,8 @@ const StudentLogin = (props) => {
       [e.target.name]: e.target.value,
     });
   };
-  const removeElem = (e) => {
-    e.preventDefault();
+  const removeElem = () => {
+    // e.preventDefault();
     setloginField({
       email: "",
       password: "",
