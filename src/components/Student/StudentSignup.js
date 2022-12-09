@@ -19,6 +19,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
 import Login from "../Login";
 import AppBars from "../AppBars";
+import StudentLogin from "./StudentLogin";
 const Signup = (props) => {
   const [fields, setfields] = useState({
     name: "",
@@ -349,7 +350,7 @@ const Signup = (props) => {
       </Box>
     </>
   ) : (
-    <Login title="GrowthPad" details={userDetails} />
+    <StudentLogin title="GrowthPad" details={userDetails} />
   );
 };
 

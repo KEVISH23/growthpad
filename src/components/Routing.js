@@ -6,6 +6,7 @@ import Signup from './Signup'
 import Home from './Teacher/Home';
 import StudentHome from './Student/StudentHome';
 import StudentSignup from './Student/StudentSignup'
+import Error404 from './Error404';
 const Routing = () => {
   return (
     <BrowserRouter>
@@ -16,7 +17,7 @@ const Routing = () => {
         <Route exact path="/studentSignup" element={<StudentSignup />}></Route>
         <Route exact path="/login" element={<Login details={[]} />}></Route>
         <Route exact path="/signup" element={<Signup />}></Route>
-        <Route exact path="/*"></Route>
+        <Route exact path="/*" element={<Error404/>} ></Route>
       </Routes>
     </BrowserRouter>
   );
