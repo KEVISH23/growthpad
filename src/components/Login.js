@@ -10,6 +10,7 @@ import "../Css/HomePage.css";
 import Signup from "./Signup";
 
 const Login = (props) => {
+  // console.log(props.getTeacherData);
   const [formChange, setformChange] = useState("false");
   const changeFormState = () => {
     setformChange("true");
@@ -72,7 +73,7 @@ const Login = (props) => {
     });
   };
   const removeElem = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setloginField({
       email: "",
       password: "",
@@ -199,7 +200,7 @@ const Login = (props) => {
       </Box>
     </>
   ) : (
-    <Signup title="GrowthPad" />
+    <Signup title="GrowthPad" getTeacherData={props.getTeacherData} />
   );
 };
 

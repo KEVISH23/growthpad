@@ -197,7 +197,7 @@ const StudentLogin = (props) => {
       </Box>
     </>
   ) : (
-    <StudentSignup title="GrowthPad" />
+    <StudentSignup title="GrowthPad" getStudentData={props.getStudentData} />
   );
 };
 

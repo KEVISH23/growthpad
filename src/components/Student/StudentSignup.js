@@ -58,6 +58,7 @@ const Signup = (props) => {
         else{
           alert("Account Created");
           userDetails.push(fields);
+          props.getStudentData(userDetails)
           removeElem()
         }
         
@@ -86,6 +87,7 @@ const Signup = (props) => {
           else{
             alert("Account Created");
             userDetails.push(fields);
+            props.getStudentData(userDetails)
             removeElem()
           }
         }

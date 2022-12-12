@@ -20,6 +20,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import Login from "./Login";
 import AppBars from "./AppBars";
 const Signup = (props) => {
+  // console.log(props.getTeacherData);
   const [fields, setfields] = useState({
     name: "",
     email: "",
@@ -48,9 +49,10 @@ const Signup = (props) => {
           alert("Mobile number must contain 10 digit")
         }else{
 
+          removeElem()
           alert("Account Created");
           userDetails.push(fields);
-          removeElem()
+          props.getTeacherData(userDetails)
         }
         
       }
@@ -65,22 +67,24 @@ const Signup = (props) => {
         });
         if (result) {
           alert("User Exist");
+          
         } else {
           if(fields.mobile.length > 10 || fields.mobile.length < 10){
             alert("Mobile number must contain 10 digit")
           }else{
 
+            removeElem()
             alert("Account Created");
             userDetails.push(fields);
-            removeElem()
+            props.getTeacherData(userDetails)
           }
         }
-        console.log(userDetails);
-        console.log(result);
+        // console.log(userDetails);
+        // console.log(result);
       }
       // removeElem()
     }
-    console.log(userDetails);
+    // console.log(userDetails);
   };
   const removeElem = () => {
     //  e.preventDefault();
